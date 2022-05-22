@@ -5,7 +5,7 @@ const path = require ('path');
 const cors = require('cors');
 const bodyParser = require('body-parser'); // Part #1 Point 2
 const nav = require ('./src/data/nav'); // Part #2 Point 6 
-
+require('dotenv').config();
 // const nav= [
 //     {
 //         link:"/books",
@@ -60,6 +60,9 @@ app.get('/',function(req,res){
 
 
 
-app.listen(3000,()=>{
-    console.log("Server Ready on 3000");// Part #1 Point 5 
+const PORT = (process.env.PORT || 3000);
+
+// PORT number changed  (Part1#5)
+app.listen(PORT, () => {
+  console.log(`Server Ready on ${PORT}`);
 });
